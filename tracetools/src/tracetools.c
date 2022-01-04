@@ -362,6 +362,36 @@ void TRACEPOINT(
     handle);
 }
 
+void TRACEPOINT(
+  message_link_n_to_m,
+  const void ** subs,
+  const size_t num_subs,
+  const void ** pubs,
+  const size_t num_pubs)
+{
+  CONDITIONAL_TP(
+    message_link_n_to_m,
+    subs,
+    num_subs,
+    pubs,
+    num_pubs);
+}
+
+void TRACEPOINT(
+  message_link_2_to_n,
+  const void ** subs,
+  const size_t num_subs,
+  const void ** pubs,
+  const size_t num_pubs)
+{
+  CONDITIONAL_TP(
+    message_link_2_to_n,
+    subs,
+    num_subs,
+    pubs,
+    num_pubs);
+}
+
 #ifndef _WIN32
 # pragma GCC diagnostic pop
 #else

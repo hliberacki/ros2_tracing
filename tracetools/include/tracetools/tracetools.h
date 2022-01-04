@@ -482,6 +482,38 @@ DECLARE_TRACEPOINT(
   rclcpp_executor_execute,
   const void * handle)
 
+/// `message_link_n_to_m`
+/**
+ * Message link annotation for N-to-M link.
+ * 
+ * \param[in] subs pointers to the `rcl` handles of the subscriptions in the link
+ * \param[in] num_subs the number of subscriptions in the link
+ * \param[in] pubs pointers to the `rcl` handles of the publishers in the link
+ * \param[in] num_pubs the number of publishers in the link
+ */
+DECLARE_TRACEPOINT(
+  message_link_n_to_m,
+  const void ** subs,
+  const size_t num_subs,
+  const void ** pubs,
+  const size_t num_pubs)
+
+/// `message_link_2_to_n`
+/**
+ * Message link annotation for 2-to-M link.
+ * 
+ * \param[in] subs pointers to the `rcl` handles of the subscriptions in the link
+ * \param[in] num_subs the number of subscriptions in the link
+ * \param[in] pubs pointers to the `rcl` handles of the publishers in the link
+ * \param[in] num_pubs the number of publishers in the link
+ */
+DECLARE_TRACEPOINT(
+  message_link_2_to_n,
+  const void ** subs,
+  const size_t num_subs,
+  const void ** pubs,
+  const size_t num_pubs)
+
 #ifdef __cplusplus
 }
 #endif
